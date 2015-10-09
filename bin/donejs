@@ -1,0 +1,47 @@
+#!/usr/bin/env node
+
+var path = require('path');
+var program = require('commander');
+
+var utils = require('../lib/utils');
+var mypkg = require(path.join(__dirname, '..', 'package.json'));
+var initDescription = 'Initialize a new DoneJS application in a new folder or the current one';
+
+program.version(mypkg.version);
+
+utils.projectRoot().then(function(root) {
+  // donejs init
+  program.command('init [folder]')
+    .description(initDescription)
+    .action(function(folder) {
+      var promise = utils.mkdirp(folder).then(function(fullPath) {
+        var options = { cwd: fullPath };
+
+        return utils.spawn('npm', [ 'install', 'donejs' ], options)
+          .then(function() {
+            var init = path.join('node_modules', '.bin', 'donejs');
+            return utils.spawn(init, ['init'], options);
+          });
+      });
+
+      utils.log(promise);
+    });
+
+  // donejs <anything else>
+  program.command('*')
+    .description('Run DoneJS commands using the current DoneJS application')
+    .action(function() {
+      var args = program.rawArgs.slice(2);
+      var command = path.join(root, 'node_modules', '.bin', 'donejs');
+
+      utils.spawn(command, args);
+    });
+
+  program.parse(process.argv);
+
+  if (!program.args.length) {
+    program.help();
+  }
+});
+
+exports.program = program;
