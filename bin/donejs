@@ -34,7 +34,7 @@ utils.projectRoot().then(function(root) {
       var args = program.rawArgs.slice(2);
       var command = path.join(root, 'node_modules', '.bin', 'donejs');
 
-      utils.spawn(command, args);
+      utils.spawn(command, args, { cwd: root });
     });
 
   program.parse(process.argv);
