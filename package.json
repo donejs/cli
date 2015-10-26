@@ -1,7 +1,7 @@
 {
   "name": "donejs-cli",
   "version": "0.5.0",
-  "description": "The global command line interface to your DoneJS application.",
+  "description": "The command line interface to your DoneJS application.",
   "main": "lib/utils",
   "bin": {
     "donejs": "./bin/donejs"
@@ -10,6 +10,7 @@
     "test": "npm run jshint && npm run mocha",
     "jshint": "jshint lib/. bin/donejs test/. --config",
     "mocha": "mocha test/ --timeout 120000",
+    "verify": "echo \"Script ran $1 $2\"",
     "publish": "git push origin --tags",
     "release:prerelease": "npm version prerelease && npm publish",
     "release:patch": "npm version patch && npm publish",
@@ -32,11 +33,18 @@
   },
   "homepage": "https://github.com/donejs/cli",
   "devDependencies": {
+    "documentjs": "^0.3.0",
+    "is-ci": "^1.0.7",
     "jshint": "^2.8.0",
     "mocha": "^2.2.5"
   },
   "dependencies": {
-    "commander": "^2.8.1",
-    "q": "^1.4.1"
+    "cross-spawn-async": "^2.0.0",
+    "mkdirp": "^0.5.1",
+    "npm": "^2.13.1",
+    "q": "^1.4.1",
+    "steal-platform": "0.0.4",
+    "yeoman-environment": "^1.2.7",
+    "yeoman-generator": "^0.20.3"
   }
 }

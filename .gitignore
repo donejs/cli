@@ -30,5 +30,5 @@ node_modules
 tmp*
 .idea/
 
-test/recursive/
+test/dummy/
 *.DS_Store
