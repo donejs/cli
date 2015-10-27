@@ -4,6 +4,7 @@ var path = require('path');
 var fs = require('fs');
 var program = require('commander');
 var mkdirp = require('mkdirp');
+var debug = require('debug')('donejs-cli:binary');
 
 var utils = require('../lib/utils');
 var log = utils.log;
@@ -11,19 +12,18 @@ var log = utils.log;
 var mypkg = require(path.join(__dirname, '..', 'package.json'));
 
 var commandList = ['init', 'generate'];
-var listSeparator = '\n\t• ';
 var initDescription = 'Initialize a new DoneJS application in a new folder or the current one';
-var generators = mypkg.donejs.generators;
-var generatorDescription = 'Run a generator. Available generators:' +
-  listSeparator + generators.join(listSeparator);
 
 program.version(mypkg.version)
-  .description("The DoneJS command line utility lets you run generators, NPM scripts and binaries local to your project.");
+  .description('The DoneJS command line utility lets you run generators, NPM scripts and binaries local to your project.');
+
+debug('Loading CLI, version is', mypkg.version);
 
 utils.projectRoot().then(function (root) {
-  var generators = null;
+  debug('Found project root', root);
   var actions = {
     init: function (folder) {
+      debug('Initializing new application', folder);
       if (folder) {
         var appDir = path.join(process.cwd(), folder);
         if (fs.existsSync(appDir)) {
@@ -37,6 +37,7 @@ utils.projectRoot().then(function (root) {
       }
 
       root = path.join(process.cwd(), 'node_modules');
+      debug('Generating application in folder', root);
       log(utils.generate(root, 'generator-donejs', ['app', {
           version: mypkg.version,
           packages: mypkg.donejs
@@ -44,6 +45,7 @@ utils.projectRoot().then(function (root) {
       ]));
     },
     generate: function (type, options) {
+      debug('Generating', 'generator-donejs', type, options);
       log(utils.generate(path.join(root, 'node_modules'), 'generator-donejs', [[type].concat(options)]));
     },
     catchAll: function (command) {
@@ -51,9 +53,13 @@ utils.projectRoot().then(function (root) {
       program.help();
     },
     add: function(name, params) {
-      if(generators.indexOf(name) !== -1) {
+      var generators = require(path.join(root, 'node_modules', 'generator-donejs'));
+      if(generators[name]) {
+        debug('add called but running generate instead', name, params);
         return actions.generate(name, params);
       }
+
+      debug('add', name, params);
       log(utils.add(path.join(root, 'node_modules'), name, params));
     }
   };
@@ -63,6 +69,7 @@ utils.projectRoot().then(function (root) {
     curpkg = require(path.join(root, 'package.json'));
   } catch (e) {
     // otherwise no local package.json
+    debug('Could not load local package.json');
   }
 
   // donejs init
@@ -72,7 +79,7 @@ utils.projectRoot().then(function (root) {
 
   // donejs generate
   program.command('generate <name> [options...]')
-    .description(generatorDescription)
+    .description('Run a generator.')
     .action(actions.generate);
 
   // catchall
@@ -90,6 +97,7 @@ utils.projectRoot().then(function (root) {
       program.command(script + ' [...args]')
         .description('`' + curpkg.scripts[script] + '` (package.json)')
         .action(function (args) {
+          debug('Running script', script, args);
           log(utils.runScript(script, args));
         });
     }
@@ -104,6 +112,7 @@ utils.projectRoot().then(function (root) {
         program.command(name + ' [...args]')
           .description('')
           .action(function (args) {
+            debug('Running command', name, args);
             log(utils.runCommand(path.join(binPath, name), args));
           });
       }
