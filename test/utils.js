@@ -83,15 +83,6 @@ describe('DoneJS CLI tests', function() {
         .fail(fail);
     });
 
-    it("get project root", function(done) {
-        var pathFromTest = path.join(process.cwd(), "node_modules");
-        utils.projectRoot().then(function(p) {
-            assert.equal(path.join(p, "node_modules"), pathFromTest);
-            done();
-        })
-        .fail(fail);
-    });
-
 		var runCommandPassesStdio = function(done){
 			var script = __dirname + "/tests/needstty.js";
 			var makeAssert = function(val, msg){
@@ -116,5 +107,30 @@ describe('DoneJS CLI tests', function() {
 			it("runCommand passes stdio for scripts that need a tty", runCommandPassesStdio);
 		}
 
+  });
+
+  describe('project root', function() {
+    it('get project root when it is current folder', function(done) {
+        var pathFromTest = process.cwd();
+        utils.projectRoot().then(function(p) {
+            assert.equal(p, pathFromTest);
+            done();
+        })
+        .fail(done);
+    });
+
+    it('return cwd when there is no package.json anywhere', function(done) {
+        var oldCwd = process.cwd();
+        var newCwd = path.join(process.cwd(), '..');
+
+        process.chdir(newCwd);
+
+        utils.projectRoot().then(function(p) {
+            assert.equal(p, newCwd);
+            process.chdir(oldCwd);
+            done();
+        })
+        .fail(done);
+    });
   });
 });
