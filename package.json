@@ -69,5 +69,8 @@
       "testee": "^0.2.0",
       "donejs-cli": "^0.5.0"
     }
+  },
+  "system": {
+    "npmDependencies": []
   }
 }
