@@ -54,7 +54,7 @@
       "can": "^2.3.0",
       "can-connect": "^0.3.0",
       "can-ssr": "^0.10.0",
-      "done-autorender": "^0.4.2",
+      "done-autorender": "^0.5.0",
       "done-component": "^0.3.0",
       "done-css": "~1.1.13",
       "generator-donejs": "^0.3.0",
