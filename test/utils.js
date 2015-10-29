@@ -107,6 +107,14 @@ describe('DoneJS CLI tests', function() {
 			it("runCommand passes stdio for scripts that need a tty", runCommandPassesStdio);
 		}
 
+    it("gets the npm version", function(done){
+      utils.npmVersion().then(function(version){
+        assert.equal(typeof version.major, "number", "the major version is a number");
+        assert.equal(typeof version.minor, "number", "the minor version is a number");
+        assert.equal(typeof version.patch, "string", "the patch version is a string");
+      }).then(done, done);
+    });
+
   });
 
   describe('project root', function() {
