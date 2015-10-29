@@ -43,7 +43,7 @@ utils.projectRoot().then(function (root) {
         return utils.npmVersion().then(function(version){
           // We expect NPM 2.x
           if(version.major !== 2) {
-            console.error('DoneJS current only supports NPM 2.x');
+            console.error('\nWARN: DoneJS current only supports NPM 2.x. You can install it with: npm install -g npm@2.x');
           }
         });
       };
