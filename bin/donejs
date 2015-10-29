@@ -36,8 +36,13 @@ utils.projectRoot().then(function (root) {
         process.chdir(appDir);
       }
 
-      root = path.join(process.cwd(), 'node_modules');
-      debug('Generating application in folder', root);
+      var nodeModules = path.join(process.cwd(), 'node_modules');
+
+      if(!fs.existsSync(nodeModules)) {
+        nodeModules = path.join(root, 'node_modules');
+      }
+
+      debug('Generating application in folder', process.cwd());
 
       var verifyVersion = function(){
         return utils.npmVersion().then(function(version){
@@ -47,7 +52,7 @@ utils.projectRoot().then(function (root) {
           }
         });
       };
-      var generatePromise = utils.generate(root, 'generator-donejs', ['app', {
+      var generatePromise = utils.generate(nodeModules, 'generator-donejs', ['app', {
           version: mypkg.version,
           packages: mypkg.donejs
         }
