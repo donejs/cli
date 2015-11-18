@@ -59,7 +59,7 @@
       "done-css": "~1.1.13",
       "generator-donejs": "^0.3.0",
       "jquery": "^2.1.4",
-      "steal": "^0.12.1"
+      "steal": "0.12.4"
     },
     "devDependencies": {
       "documentjs": "0.3.3",
