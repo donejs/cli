@@ -53,20 +53,20 @@
     "dependencies": {
       "can": "^2.3.0",
       "can-connect": "^0.3.0",
-      "can-ssr": "^0.10.0",
-      "done-autorender": "^0.5.0",
+      "can-ssr": "^0.11.0-pre.2",
+      "done-autorender": "^0.6.0-pre.0",
       "done-component": "^0.3.0",
       "done-css": "~1.1.13",
       "generator-donejs": "^0.3.0",
       "jquery": "^2.1.4",
-      "steal": "^0.12.7"
+      "steal": "^0.13.0-pre.2"
     },
     "devDependencies": {
       "documentjs": "0.3.3",
       "donejs-deploy": "^0.3.1",
       "funcunit": "~3.0.0",
       "steal-qunit": "^0.1.1",
-      "steal-tools": "^0.12.0",
+      "steal-tools": "^0.13.0-pre.0",
       "testee": "^0.2.4",
       "donejs-cli": "^0.5.0",
       "can-fixture": "^0.1.0"
