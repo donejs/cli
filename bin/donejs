@@ -22,7 +22,7 @@ debug('Loading CLI, version is', mypkg.version);
 utils.projectRoot().then(function (root) {
   debug('Found project root', root);
   var actions = {
-    init: function (folder) {
+    init: function (folder, options) {
       debug('Initializing new application', folder);
       if (folder) {
         var appDir = path.join(process.cwd(), folder);
@@ -54,7 +54,8 @@ utils.projectRoot().then(function (root) {
       };
       var generatePromise = utils.generate(nodeModules, 'generator-donejs', ['app', {
           version: mypkg.version,
-          packages: mypkg.donejs
+          packages: mypkg.donejs,
+          skipInstall: options.skipInstall
         }
       ]).then(verifyVersion, function(err){
         return verifyVersion().then(function(){
@@ -93,6 +94,7 @@ utils.projectRoot().then(function (root) {
 
   // donejs init
   program.command('init [folder]')
+    .option('-S, --skip-install')
     .description(initDescription)
     .action(actions.init);
 
