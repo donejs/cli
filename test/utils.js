@@ -2,7 +2,6 @@ var assert = require('assert');
 var fs = require('fs');
 var path = require('path');
 var Q = require('q');
-var npm = require('npm');
 var utils = require('../lib/utils');
 
 function fail(error) {
@@ -20,8 +19,7 @@ describe('DoneJS CLI tests', function() {
     });
 
     it('installIfMissing', function(done) {
-      Q.ninvoke(npm, 'load', { loaded: false })
-        .then(utils.installIfMissing('day-seconds'))
+      Q.resolve(utils.installIfMissing('day-seconds')())
         .then(function() {
           var daySeconds = require('day-seconds');
           assert.equal(daySeconds(true), 86400, 'day-second module installed and loaded');
