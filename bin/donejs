@@ -44,24 +44,12 @@ utils.projectRoot().then(function (root) {
 
       debug('Generating application in folder', process.cwd());
 
-      var verifyVersion = function(){
-        return utils.npmVersion().then(function(version){
-          // We expect NPM 2.x
-          if(version.major !== 2) {
-            console.error('\nWARN: DoneJS current only supports NPM 2.x. You can install it with: npm install -g npm@2.x');
-          }
-        });
-      };
       var generatePromise = utils.generate(nodeModules, 'generator-donejs', ['app', {
           version: mypkg.version,
           packages: mypkg.donejs,
           skipInstall: options.skipInstall
         }
-      ]).then(verifyVersion, function(err){
-        return verifyVersion().then(function(){
-          throw err;
-        });
-      });
+      ]);
       log(generatePromise);
     },
     generate: function (type, options) {
