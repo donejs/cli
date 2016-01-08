@@ -1,6 +1,6 @@
 {
   "name": "donejs-cli",
-  "version": "0.6.0-pre.7",
+  "version": "0.6.0",
   "description": "The command line interface to your DoneJS application.",
   "main": "lib/utils",
   "bin": {
@@ -53,23 +53,23 @@
     "dependencies": {
       "can": "^2.3.0",
       "can-connect": "^0.3.0",
-      "can-ssr": "^0.11.0-pre.2",
-      "done-autorender": "^0.6.0-pre.0",
-      "done-component": "^0.4.0-pre.3",
+      "can-ssr": "^0.11.0",
+      "done-autorender": "^0.6.0",
+      "done-component": "^0.4.0",
       "done-css": "~1.1.13",
       "generator-donejs": "^0.4.3",
       "jquery": "^2.1.4",
-      "steal": "^0.13.0-pre.2"
+      "steal": "^0.13.0"
     },
     "devDependencies": {
       "documentjs": "0.3.3",
       "donejs-deploy": "^0.3.1",
       "funcunit": "~3.0.0",
       "steal-qunit": "^0.1.1",
-      "steal-tools": "^0.13.0-pre.0",
+      "steal-tools": "^0.13.0",
       "testee": "^0.2.4",
       "testee": "^0.2.4",
-      "donejs-cli": "^0.6.0-pre.0",
+      "donejs-cli": "^0.6.0",
       "can-fixture": "^0.1.0"
     }
   },
