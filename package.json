@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/donejs/cli",
   "devDependencies": {
-    "documentjs": "^0.3.0",
+    "documentjs": "^0.4.1",
     "is-ci": "^1.0.7",
     "jshint": "^2.8.0",
     "mocha": "^2.2.5"
