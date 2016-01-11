@@ -62,12 +62,11 @@
       "steal": "^0.13.0"
     },
     "devDependencies": {
-      "documentjs": "0.3.3",
+      "documentjs": "^0.4.1",
       "donejs-deploy": "^0.3.1",
       "funcunit": "~3.0.0",
       "steal-qunit": "^0.1.1",
       "steal-tools": "^0.13.0",
-      "testee": "^0.2.4",
       "testee": "^0.2.4",
       "donejs-cli": "^0.6.0",
       "can-fixture": "^0.1.0"
