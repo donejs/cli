@@ -5,7 +5,7 @@ var fs = require('fs');
 var program = require('commander');
 var mkdirp = require('mkdirp');
 var debug = require('debug')('donejs-cli:binary');
-var isWindows = require('os').platform() === 'win32'
+var isWindows = require('os').platform() === 'win32';
 
 var utils = require('../lib/utils');
 var log = utils.log;
