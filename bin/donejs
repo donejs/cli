@@ -5,6 +5,7 @@ var fs = require('fs');
 var program = require('commander');
 var mkdirp = require('mkdirp');
 var debug = require('debug')('donejs-cli:binary');
+var isWindows = require('os').platform() === 'win32'
 
 var utils = require('../lib/utils');
 var log = utils.log;
@@ -121,8 +122,9 @@ utils.projectRoot().then(function (root) {
         program.command(name + ' [...args]')
           .description('')
           .action(function (args) {
+            var filename = name + (isWindows ? ".cmd": "");
             debug('Running command', name, args);
-            log(utils.runCommand(path.join(binPath, name), args));
+            log(utils.runCommand(path.join(binPath, filename), args));
           });
       }
     });
