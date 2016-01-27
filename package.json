@@ -57,7 +57,7 @@
       "done-autorender": "^0.6.0",
       "done-component": "^0.4.0",
       "done-css": "~1.1.13",
-      "generator-donejs": "^0.4.3",
+      "generator-donejs": "^0.5.0",
       "jquery": "2.1.4",
       "steal": "^0.13.0"
     },
