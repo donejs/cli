@@ -71,7 +71,7 @@ describe('DoneJS CLI tests', function () {
 
     it('generate .component', function (done) {
       var moduleName = 'dummy/component.component';
-      var root = path.join(process.cwd(), '..', 'node_modules');
+      var root = path.join(process.cwd(), 'node_modules');
       var generatedPath = path.join(testDir, moduleName);
 
       utils.generate(root, 'generator-donejs', [
