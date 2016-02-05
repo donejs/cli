@@ -11,9 +11,7 @@ var utils = require('../lib/utils');
 var log = utils.log;
 
 var mypkg = require(path.join(__dirname, '..', 'package.json'));
-
 var commandList = ['init', 'generate'];
-var initDescription = 'Initialize a new DoneJS application in a new folder or the current one';
 
 program.version(mypkg.version)
   .description('The DoneJS command line utility lets you run generators, NPM scripts and binaries local to your project.');
@@ -44,8 +42,9 @@ utils.projectRoot().then(function (root) {
       }
 
       debug('Generating application in folder', process.cwd());
-
-      var generatePromise = utils.generate(nodeModules, 'generator-donejs', ['app', {
+      
+      var type = options.type || 'app';
+      var generatePromise = utils.generate(nodeModules, 'generator-donejs', [type, {
           version: mypkg.version,
           packages: mypkg.donejs,
           skipInstall: options.skipInstall
@@ -84,7 +83,8 @@ utils.projectRoot().then(function (root) {
   // donejs init
   program.command('init [folder]')
     .option('-S, --skip-install')
-    .description(initDescription)
+    .option('-T, --type [type]')
+    .description('Initialize a new DoneJS application or plugin (--type plugin) in a new folder or the current one')
     .action(actions.init);
 
   // donejs generate
