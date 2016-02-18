@@ -15,7 +15,8 @@
     "release:prerelease": "npm version prerelease && npm publish",
     "release:patch": "npm version patch && npm publish",
     "release:minor": "npm version minor && npm publish",
-    "release:major": "npm version major && npm publish"
+    "release:major": "npm version major && npm publish",
+    "install-engine-dependencies": "install-engine-dependencies"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
   "homepage": "https://github.com/donejs/cli",
   "devDependencies": {
     "documentjs": "^0.4.1",
+    "engine-dependencies": "^0.2.11",
     "is-ci": "^1.0.7",
     "jshint": "^2.8.0",
     "mocha": "^2.2.5"
@@ -43,7 +45,6 @@
     "cross-spawn-async": "^2.0.0",
     "debug": "^2.2.0",
     "mkdirp": "^0.5.1",
-    "npm": "^2.13.1",
     "q": "^1.4.1",
     "steal-platform": "0.0.4",
     "yeoman-environment": "^1.2.7",
@@ -71,6 +72,16 @@
       "donejs-cli": "^0.6.0",
       "can-fixture": "^0.1.0"
     }
+  },
+  "engineDependencies": {
+    "node": {
+      "0.10.x": {
+        "devDependencies": {
+          "npm": "^2.13.1"
+        }
+      }
+    },
+    "iojs": {}
   },
   "system": {
     "npmDependencies": []
