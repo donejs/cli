@@ -1,5 +1,7 @@
 sudo: false
 language: node_js
+before_script:
+  - install-engine-dependencies
 node_js:
   - "0.10"
   - "0.12"
