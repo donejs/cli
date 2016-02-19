@@ -51,9 +51,9 @@
   },
   "donejs": {
     "dependencies": {
-      "can": "canjs/canjs#scope",
+      "can": "^2.3.16",
       "can-connect": "^0.3.0",
-      "can-ssr": "canjs/can-ssr#debug",
+      "can-ssr": "^0.11.6",
       "done-autorender": "^0.6.0",
       "done-component": "^0.4.0",
       "done-css": "~1.1.13",
