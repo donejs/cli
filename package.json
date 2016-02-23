@@ -60,14 +60,14 @@
       "done-css": "~1.1.13",
       "generator-donejs": "^0.6.8",
       "jquery": "2.1.4",
-      "steal": "^0.14.0-pre.8"
+      "steal": "^0.14.0"
     },
     "devDependencies": {
       "documentjs": "^0.4.1",
       "donejs-deploy": "^0.4.0",
       "funcunit": "~3.0.0",
       "steal-qunit": "^0.1.1",
-      "steal-tools": "^0.14.0-pre.1",
+      "steal-tools": "^0.14.0",
       "testee": "^0.2.4",
       "donejs-cli": "^0.6.0",
       "can-fixture": "^0.1.0"
