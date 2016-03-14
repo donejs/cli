@@ -42,14 +42,21 @@ utils.projectRoot().then(function (root) {
       }
 
       debug('Generating application in folder', process.cwd());
-      
+
       var type = options.type || 'app';
-      var generatePromise = utils.generate(nodeModules, 'generator-donejs', [type, {
-          version: mypkg.version,
-          packages: mypkg.donejs,
-          skipInstall: options.skipInstall
-        }
-      ]);
+      var genVersion = mypkg.donejs.dependencies['generator-donejs'];
+      var genInstallPromise = utils.installIfMissing(nodeModules,
+                                                     'generator-donejs',
+                                                     genVersion)();
+
+      var generatePromise = genInstallPromise.then(function () {
+        return utils.generate(nodeModules, 'generator-donejs', [type, {
+            version: mypkg.version,
+            packages: mypkg.donejs,
+            skipInstall: options.skipInstall
+          }
+        ]);
+      });
       log(generatePromise);
     },
     generate: function (type, options) {
