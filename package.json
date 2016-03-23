@@ -1,6 +1,6 @@
 {
   "name": "donejs-cli",
-  "version": "0.8.0-pre.2",
+  "version": "0.8.0",
   "description": "The command line interface to your DoneJS application.",
   "main": "lib/utils",
   "bin": {
@@ -70,7 +70,7 @@
       "steal-qunit": "^0.1.1",
       "steal-tools": "^0.15.0",
       "testee": "^0.2.4",
-      "donejs-cli": "^0.7.0",
+      "donejs-cli": "^0.8.0",
       "can-fixture": "^0.1.2"
     }
   },
