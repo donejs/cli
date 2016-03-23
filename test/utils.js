@@ -22,14 +22,26 @@ describe('DoneJS CLI tests', function () {
       delete global.donejsTestPluginLoaded;
     });
 
-    it('installIfMissing', function (done) {
-      Q.resolve(utils.installIfMissing('day-seconds')())
-      .then(function () {
-        var daySeconds = require('day-seconds');
-        assert.equal(daySeconds(true), 86400, 'day-second module installed and loaded');
-        done();
-      })
-      .fail(fail);
+    describe('installIfMissing', function() {
+      it('Ensures a module is installed', function (done) {
+        Q.resolve(utils.installIfMissing('day-seconds')())
+        .then(function () {
+          var daySeconds = require('day-seconds');
+          assert.equal(daySeconds(true), 86400,
+                       'day-second module installed and loaded');
+          done();
+        })
+        .fail(fail);
+      });
+
+      it('Can install a version range', function (done) {
+        Q.resolve(utils.installIfMissing(testDir, 'foo', '^1.0.0')())
+        .then(function () {
+          assert(require('foo'), 'foo was installed');
+          done();
+        })
+        .fail(fail);
+      });
     });
 
     describe('add', function () {
