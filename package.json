@@ -53,13 +53,13 @@
   "donejs": {
     "dependencies": {
       "can": "^2.3.16",
-      "can-connect": "^0.4.0-pre.0",
+      "can-connect": "^0.5.0",
       "can-zone": "^0.4.4",
       "done-serve": "^0.1.0",
       "done-autorender": "^0.7.3",
       "done-component": "^0.4.0",
       "done-css": "~2.0.2",
-      "generator-donejs": "^0.8.0-pre.0",
+      "generator-donejs": "^0.8.0",
       "jquery": "~2.2.1",
       "steal": "^0.15.0"
     },
