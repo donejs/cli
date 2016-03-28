@@ -16,7 +16,9 @@
     "release:patch": "npm version patch && npm publish",
     "release:minor": "npm version minor && npm publish",
     "release:major": "npm version major && npm publish",
-    "engine-deps": "install-engine-dependencies"
+    "engine-deps": "install-engine-dependencies",
+    "coverage": "istanbul cover _mocha -- test/ --timeout 600000",
+    "coverage:upload": "istanbul cover _mocha --report lcovonly -- test/ --timeout 600000 && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
@@ -34,11 +36,14 @@
   },
   "homepage": "https://github.com/donejs/cli",
   "devDependencies": {
+    "coveralls": "^2.11.9",
     "documentjs": "^0.4.1",
     "engine-dependencies": "^0.2.11",
     "is-ci": "^1.0.7",
+    "istanbul": "^0.4.2",
     "jshint": "^2.8.0",
-    "mocha": "^2.2.5"
+    "mocha": "^2.2.5",
+    "mocha-lcov-reporter": "^1.2.0"
   },
   "dependencies": {
     "commander": "^2.9.0",
