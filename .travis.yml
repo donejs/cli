@@ -8,3 +8,4 @@ node_js:
   - "node"
   - "iojs"
   - "4.0"
+script: npm run coverage:upload
