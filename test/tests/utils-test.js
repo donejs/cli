@@ -2,7 +2,7 @@ var assert = require('assert');
 var fs = require('fs');
 var path = require('path');
 var Q = require('q');
-var utils = require('../lib/utils');
+var utils = require('../../lib/utils');
 
 function fail(error) {
   console.error(error.stack);
@@ -99,7 +99,7 @@ describe('DoneJS CLI tests', function () {
     });
 
     var runCommandPassesStdio = function (done) {
-      var script = __dirname + "/tests/needstty.js";
+      var script = __dirname + "/needstty.js";
       var makeAssert = function (val, msg) {
         return function (err) {
           if (!val && err) {
