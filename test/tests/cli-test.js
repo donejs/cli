@@ -1,7 +1,7 @@
 var path = require('path');
 var assert = require('assert');
-var child = require('child_process');
 var concat = require('concat-stream');
+var spawn = require('cross-spawn-async');
 
 describe('./bin/donejs', function() {
   var command;
@@ -11,7 +11,7 @@ describe('./bin/donejs', function() {
   });
 
   it('shows cli help when no options passed', function(done) {
-    var proc = child.spawn(command, []);
+    var proc = spawn(command, []);
 
     proc.stdout.pipe(concat(function(output) {
       var res = output.toString('utf8');

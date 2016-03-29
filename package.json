@@ -38,6 +38,7 @@
   "devDependencies": {
     "concat-stream": "^1.5.1",
     "coveralls": "^2.11.9",
+    "cross-spawn-async": "^2.1.9",
     "documentjs": "^0.4.1",
     "engine-dependencies": "^0.2.11",
     "is-ci": "^1.0.7",
