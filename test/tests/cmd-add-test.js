@@ -10,8 +10,13 @@ describe('cli add cmd', function() {
     var name = 'component'; // this is a built-in generator
     var generateCalled = false;
     var root = path.join(__dirname, '..', '..');
+    var generator = path.join(root, 'node_modules', 'generator-donejs');
 
     mockery.registerAllowable(cmdAddPath);
+
+    mockery.registerMock(generator, {
+      component: {}
+    });
 
     mockery.registerMock('./cmd-generate', function() {
       var args = Array.prototype.slice.call(arguments);
