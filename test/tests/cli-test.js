@@ -10,7 +10,7 @@ describe('./bin/donejs', function() {
     command = path.join(__dirname, '..', '..', 'bin', 'donejs');
   });
 
-  it('shows cli help when no options passed', function(done) {
+  it.skip('shows cli help when no options passed', function(done) {
     var proc = spawn(command, []);
 
     proc.stdout.pipe(concat(function(output) {
