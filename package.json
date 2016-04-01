@@ -18,7 +18,7 @@
     "release:major": "npm version major && npm publish",
     "engine-deps": "install-engine-dependencies",
     "coverage": "istanbul cover _mocha -- test/ --timeout 600000",
-    "coverage:upload": "istanbul cover _mocha --report lcovonly -- test/ --timeout 600000 && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "coverage:upload": "istanbul cover _mocha --report lcovonly -- test/ --timeout 600000 && cat ./coverage/lcov.info | ./node_modules/coveralls-send/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
@@ -37,7 +37,7 @@
   "homepage": "https://github.com/donejs/cli",
   "devDependencies": {
     "concat-stream": "^1.5.1",
-    "coveralls": "^2.11.9",
+    "coveralls-send": "0.0.2",
     "cross-spawn-async": "^2.1.9",
     "documentjs": "^0.4.1",
     "engine-dependencies": "^0.2.11",
