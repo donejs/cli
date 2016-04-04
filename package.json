@@ -57,7 +57,7 @@
     "q": "^1.4.1",
     "steal-platform": "0.0.4",
     "yeoman-environment": "^1.2.7",
-    "yeoman-generator": "^0.20.3"
+    "yeoman-generator": "^0.22.3"
   },
   "donejs": {
     "dependencies": {
@@ -68,7 +68,7 @@
       "done-autorender": "^0.7.3",
       "done-component": "^0.4.0",
       "done-css": "~2.0.2",
-      "generator-donejs": "^0.8.0",
+      "generator-donejs": "^0.9.0",
       "jquery": "~2.2.1",
       "steal": "^0.15.0"
     },
