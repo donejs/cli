@@ -12,4 +12,8 @@ describe('getNpmScripts', function() {
     assert(keys.indexOf('jshint') !== -1, 'should include "jshint" script');
     assert(keys.indexOf('coverage') !== -1, 'should include "coverage" script');
   });
+
+  it('returns empty object if package.json does not exist', function() {
+    assert.deepEqual(getNpmScripts(__dirname), {}, 'should be an empty object');
+  });
 });

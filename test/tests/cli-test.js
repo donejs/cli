@@ -1,23 +1,44 @@
 var path = require('path');
 var assert = require('assert');
-var concat = require('concat-stream');
-var spawn = require('cross-spawn-async');
+var pkg = require('../../package.json');
+var cli = require('../../lib/cli/index');
 
 describe('./bin/donejs', function() {
-  var command;
+  var program;
 
   beforeEach(function() {
-    command = path.join(__dirname, '..', '..', 'bin', 'donejs');
+    program = cli(__dirname);
   });
 
-  it.skip('shows cli help when no options passed', function(done) {
-    var proc = spawn(command, []);
-
-    proc.stdout.pipe(concat(function(output) {
-      var res = output.toString('utf8');
-
-      assert(/Usage: donejs \[options\]/.test(res), 'should show cli help');
-      done();
-    }));
+  it('reports the correct package version', function() {
+    assert.equal(program.version(), pkg.version);
   });
+
+  it('includes the init, add and generate commands', function() {
+    var cliCommands = program.commands.map(function(cmd) {
+      return cmd._name;
+    });
+
+    assert(has(cliCommands, 'init'), 'should include init');
+    assert(has(cliCommands, 'add'), 'should include add');
+    assert(has(cliCommands, 'generate'), 'should include generate');
+  });
+
+  it('includes local scripts and binaries as commands', function() {
+    program = cli(path.join(__dirname, '..', '..'));
+
+    var cliCommands = program.commands.map(function(cmd) {
+      return cmd._name;
+    });
+
+    assert(has(cliCommands, 'test'), 'should include test');
+    assert(has(cliCommands, 'jshint'), 'should include jshint');
+    assert(has(cliCommands, 'coverage'), 'should include coverage');
+    assert(has(cliCommands, 'mocha'), 'should include mocha');
+    assert(has(cliCommands, 'documentjs'), 'should include documentjs');
+  });
+
+  function has(coll, cmd) {
+    return coll.indexOf(cmd) !== -1;
+  }
 });
