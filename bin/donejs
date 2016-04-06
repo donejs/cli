@@ -5,7 +5,14 @@ var utils = require('../lib/utils');
 
 utils.projectRoot()
   .then(function(root) {
-    cli(root, process.argv);
+    var program = cli(root);
+
+    program.parse(process.argv);
+
+    // show help if no args provided
+    if (!program.args.length) {
+      program.help();
+    }
   })
   .catch(function(err) {
     throw err;

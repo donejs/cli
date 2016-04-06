@@ -11,6 +11,7 @@ function fail(error) {
 
 var isCI = require('is-ci');
 var isWindows = require('os').platform() === 'win32';
+
 // change the current working directory to "test" where the .yo-rc.json
 // and the package.json is located
 var testDir = path.join(process.cwd(), 'test');
@@ -73,12 +74,28 @@ describe('DoneJS CLI tests', function () {
       });
     });
 
-    it('runScript and runCommand', function (done) {
-      utils.runScript('verify', ['testing', 'args']).then(function (child) {
-        assert.equal(child.exitCode, 0, 'Exited successfully');
-        done();
-      })
-      .fail(fail);
+    it('runScript resolves if command exits successfully', function (done) {
+      utils.runScript('verify', ['testing', 'args'])
+        .then(function (child) {
+          assert.equal(child.exitCode, 0, 'Exited successfully');
+          done();
+        })
+        .fail(fail);
+    });
+
+    it('runScript rejects if command exits with error', function(done) {
+      utils.runScript('foobar')
+        .then(function() {
+          assert(false, 'should fail');
+          done();
+        })
+        .catch(function(err) {
+          assert.equal(
+            err.message,
+            'Command `npm` did not complete successfully'
+          );
+          done();
+        });
     });
 
     it('generate .component', function (done) {
@@ -140,6 +157,40 @@ describe('DoneJS CLI tests', function () {
         done();
       })
       .fail(done);
+    });
+  });
+
+  describe('utils.log', function() {
+    var _exit;
+    var exitCode;
+
+    beforeEach(function() {
+      _exit = process.exit;
+
+      Object.defineProperty(process, 'exit', {
+        value: function(code) {
+          exitCode = code;
+        }
+      });
+    });
+
+    afterEach(function() {
+      Object.defineProperty(process, 'exit', { value: _exit });
+    });
+
+    it('ends process successfully if promise resolves', function() {
+      return utils.log(Q(true))
+        .then(function() {
+          assert.equal(exitCode, 0);
+        });
+    });
+
+    it('ends process with error if promise rejects', function(done) {
+      utils.log(Q.reject(new Error('foobar')))
+        .finally(function() {
+          assert.equal(exitCode, 1);
+          done();
+        });
     });
   });
 });
