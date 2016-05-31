@@ -72,7 +72,8 @@
       "done-component": "^0.6.0-pre.1",
       "done-css": "~2.1.0-pre.0",
       "generator-donejs": "^0.10.0-pre.0",
-      "steal": "^0.16.0"
+      "steal": "^0.16.0",
+      "steal-stache": "^3.0.0-pre.2"
     },
     "devDependencies": {
       "documentjs": "^0.4.2",
