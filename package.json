@@ -67,7 +67,7 @@
       "can-route": "^3.0.0-pre.5",
       "can-route-pushstate": "^3.0.0-pre.3",
       "can-zone": "^0.5.5",
-      "done-serve": "^^0.3.0-pre.0",
+      "done-serve": "^0.3.0-pre.0",
       "done-autorender": "^0.9.0-pre.0",
       "done-component": "^0.6.0-pre.1",
       "done-css": "~2.1.0-pre.0",
