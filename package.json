@@ -73,7 +73,7 @@
       "done-autorender": "^1.0.0-alpha.0",
       "done-component": "^0.6.0-pre.1",
       "done-css": "^3.0.0-alpha.0",
-      "generator-donejs": "^0.10.0-pre.4",
+      "generator-donejs": "^1.0.0-alpha.0",
       "steal": "^1.0.5",
       "steal-less": "^1.0.2",
       "steal-stache": "^3.0.4"
