@@ -71,7 +71,7 @@
       "can-zone": "^0.6.0",
       "done-serve": "^1.0.0-alpha.0",
       "done-autorender": "^1.0.0-alpha.0",
-      "done-component": "^0.6.0-pre.1",
+      "done-component": "^0.6.0-pre.5",
       "done-css": "^3.0.0-alpha.0",
       "generator-donejs": "^1.0.0-alpha.0",
       "steal": "^1.0.5",
