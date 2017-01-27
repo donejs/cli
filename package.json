@@ -54,9 +54,7 @@
     "debug": "^2.2.0",
     "mkdirp": "^0.5.1",
     "q": "^1.4.1",
-    "steal-platform": "0.0.4",
-    "yeoman-environment": "^1.2.7",
-    "yeoman-generator": "^0.22.3"
+    "yeoman-environment": "^1.2.7"
   },
   "donejs": {
     "dependencies": {
