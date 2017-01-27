@@ -81,7 +81,6 @@
     "devDependencies": {
       "documentjs": "^0.4.4",
       "donejs-cli": "^1.0.0-alpha.2",
-      "donejs-deploy": "^0.4.2",
       "funcunit": "^3.1.0",
       "steal-qunit": "^1.0.0",
       "steal-tools": "^1.0.1",
