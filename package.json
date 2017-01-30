@@ -39,7 +39,6 @@
     "concat-stream": "^1.5.1",
     "coveralls-send": "0.0.2",
     "cross-spawn-async": "^2.1.9",
-    "documentjs": "^0.4.1",
     "engine-dependencies": "^0.2.11",
     "is-ci": "^1.0.7",
     "istanbul": "^0.4.2",
@@ -55,9 +54,7 @@
     "debug": "^2.2.0",
     "mkdirp": "^0.5.1",
     "q": "^1.4.1",
-    "steal-platform": "0.0.4",
-    "yeoman-environment": "^1.2.7",
-    "yeoman-generator": "^0.22.3"
+    "yeoman-environment": "^1.2.7"
   },
   "donejs": {
     "dependencies": {
@@ -81,7 +78,6 @@
     "devDependencies": {
       "documentjs": "^0.4.4",
       "donejs-cli": "^1.0.0-alpha.2",
-      "donejs-deploy": "^0.4.2",
       "funcunit": "^3.1.0",
       "steal-qunit": "^1.0.0",
       "steal-tools": "^1.0.1",

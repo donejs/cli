@@ -35,7 +35,6 @@ describe('./bin/donejs', function() {
     assert(has(cliCommands, 'jshint'), 'should include jshint');
     assert(has(cliCommands, 'coverage'), 'should include coverage');
     assert(has(cliCommands, 'mocha'), 'should include mocha');
-    assert(has(cliCommands, 'documentjs'), 'should include documentjs');
   });
 
   function has(coll, cmd) {
