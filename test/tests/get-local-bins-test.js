@@ -19,14 +19,12 @@ describe('getLocalBins', function() {
     process.chdir(binPath);
     fs.writeFileSync('mocha');
     fs.writeFileSync('jshint');
-    fs.writeFileSync('documentjs');
     process.chdir(cwd);
 
     var binaries = getLocalBins(binPath);
 
     assert(binaries.indexOf('mocha') !== -1, 'should include mocha');
     assert(binaries.indexOf('jshint') !== -1, 'should include jshint');
-    assert(binaries.indexOf('documentjs') !== -1, 'should include documentjs');
 
     rimraf.sync(binPath);
   });
