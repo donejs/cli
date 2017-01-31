@@ -76,7 +76,6 @@
       "steal-stache": "^3.0.4"
     },
     "devDependencies": {
-      "documentjs": "^0.4.4",
       "donejs-cli": "^1.0.0-alpha.2",
       "funcunit": "^3.1.0",
       "steal-qunit": "^1.0.0",
