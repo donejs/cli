@@ -1,0 +1,4 @@
+{
+  "name": "bad-package-json"
+  "description": "you missed a comma"
+}
