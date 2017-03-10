@@ -72,6 +72,15 @@ describe('DoneJS CLI tests', function () {
         })
         .fail(fail);
       });
+
+      it('generator with specific version or tag', function (done) {
+        utils.add(path.join(process.cwd(), 'node_modules'), 'test-plugin@0.0.5', [])
+        .then(function () {
+          assert.equal(global.donejsTestPluginLoaded, 'default', 'donejs-test-plugin other generator is executed');
+          done();
+        })
+        .fail(fail);
+      });
     });
 
     it('runScript resolves if command exits successfully', function (done) {
