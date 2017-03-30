@@ -1,0 +1,14 @@
+{
+  "name": "donejs-cli",
+  "version": "1.0.0",
+  "description": "Fake CLI",
+  "main": "index.js",
+  "bin": {
+    "donejs": "./bin/donejs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}

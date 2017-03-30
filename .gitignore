@@ -31,4 +31,5 @@ tmp*
 .idea/
 
 test/dummy/
+test/npm-link/node
 *.DS_Store

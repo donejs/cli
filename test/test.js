@@ -5,3 +5,4 @@ require('./tests/cmd-init-test');
 require('./tests/cmd-generate-test');
 require('./tests/get-local-bins-test');
 require('./tests/get-npm-scripts-test');
+require('./tests/npm-link-test');

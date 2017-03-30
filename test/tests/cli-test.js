@@ -3,7 +3,7 @@ var assert = require('assert');
 var pkg = require('../../package.json');
 var cli = require('../../lib/cli/index');
 
-describe('./bin/donejs', function() {
+describe('./bin/donejs-cli', function() {
   var program;
 
   beforeEach(function() {
