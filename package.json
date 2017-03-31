@@ -77,12 +77,12 @@
       "steal-stache": "^3.0.5"
     },
     "devDependencies": {
+      "can-fixture": "^1.0.13",
       "donejs-cli": "^1.0.0",
       "funcunit": "^3.2.0",
       "steal-qunit": "^1.0.1",
       "steal-tools": "^1.2.0",
-      "testee": "^0.3.0",
-      "can-fixture": "^1.0.13"
+      "testee": "^0.3.0"
     }
   },
   "engineDependencies": {
