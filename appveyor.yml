@@ -2,9 +2,7 @@
 environment:
   matrix:
   # node.js
-  - nodejs_version: "4"
   - nodejs_version: "6"
-  - nodejs_version: "7"
   - nodejs_version: "8"
 # Install scripts. (runs after repo cloning)
 install:
@@ -12,7 +10,6 @@ install:
   - ps: Install-Product node $env:nodejs_version
   # install modules
   - npm install
-  - npm run engine-deps
 
 # Post-install test scripts.
 test_script:

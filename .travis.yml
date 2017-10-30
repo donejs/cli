@@ -1,10 +1,6 @@
 sudo: false
 language: node_js
-before_script:
-  - install-engine-dependencies
 node_js:
-  - "4"
   - "6"
-  - "7"
   - "8"
 script: npm run coverage:upload
