@@ -68,7 +68,7 @@
       "done-autorender": "^2.0.0-pre.0",
       "done-component": "^2.0.0-pre.0",
       "done-css": "^3.0.1",
-      "done-serve": "^1.5.0",
+      "done-serve": "^2.0.0-pre.0",
       "generator-donejs": "^2.0.0-pre.0",
       "steal": "^1.6.2",
       "steal-less": "^1.2.0",
