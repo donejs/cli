@@ -56,32 +56,32 @@
   },
   "donejs": {
     "dependencies": {
-      "can-component": "^4.0.0-pre.16",
-      "can-connect": "^2.0.0-pre.12",
-      "can-define": "^2.0.0-pre.19",
-      "can-route": "^4.0.0-pre.13",
-      "can-route-pushstate": "^4.0.0-pre.3",
-      "can-set": "^1.3.3",
-      "can-stache": "^4.0.0-pre.32",
+      "can-component": "^4.0.2",
+      "can-connect": "^2.0.2",
+      "can-define": "^2.0.1",
+      "can-route": "^4.1.0",
+      "can-route-pushstate": "^4.0.1",
+      "can-set": "^1.5.1",
+      "can-stache": "^4.1.0",
       "can-stache-route-helpers": "<2.0.0",
-      "can-view-autorender": "^4.0.0-pre.0",
+      "can-view-autorender": "^4.0.0",
       "can-zone": "^0.6.13",
-      "done-autorender": "^2.0.0-pre.0",
-      "done-component": "^2.0.0-pre.0",
-      "done-css": "^3.0.1",
+      "done-autorender": "^2.0.0-pre.14",
+      "done-component": "^2.0.0-pre.1",
+      "done-css": "^3.0.2",
       "done-serve": "^2.0.0-pre.0",
       "generator-donejs": "^2.0.0-pre.0",
-      "steal": "^1.6.2",
-      "steal-less": "^1.2.0",
-      "steal-stache": "^4.0.0-pre.2"
+      "steal": "^1.6.5",
+      "steal-less": "^1.2.2",
+      "steal-stache": "^4.0.1"
     },
     "devDependencies": {
-      "can-fixture": "^2.0.0-pre.0",
+      "can-fixture": "^2.0.2",
       "donejs-cli": "^2.0.0-pre.0",
       "funcunit": "^3.2.0",
       "steal-qunit": "^1.0.1",
-      "steal-tools": "^1.10.0",
-      "testee": "^0.3.0"
+      "steal-tools": "^1.11.3",
+      "testee": "^0.7.0"
     }
   }
 }
