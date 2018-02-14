@@ -1,6 +1,6 @@
 {
   "name": "donejs-cli",
-  "version": "2.0.0-pre.2",
+  "version": "2.0.0-pre.3",
   "description": "The command line interface to your DoneJS application.",
   "main": "lib/utils",
   "bin": {
