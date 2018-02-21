@@ -80,7 +80,7 @@
       "can-fixture": "^2.0.2",
       "donejs-cli": "^2.0.0-pre.0",
       "funcunit": "^3.2.0",
-      "steal-conditional": "^0.4.0",
+      "steal-conditional": "^1.0.0",
       "steal-qunit": "^1.0.1",
       "steal-tools": "^1.11.3",
       "testee": "^0.7.0"
