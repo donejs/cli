@@ -70,7 +70,7 @@
       "done-component": "^2.0.0",
       "done-css": "^3.0.2",
       "done-serve": "^2.0.0",
-      "generator-donejs": "^2.0.0",
+      "generator-donejs": "^2.1.0",
       "steal": "^1.6.5",
       "steal-less": "^1.2.2",
       "steal-stache": "^4.0.1"
