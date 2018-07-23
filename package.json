@@ -62,7 +62,7 @@
       "done-component": "^2.0.0",
       "done-css": "^3.0.2",
       "done-serve": "^2.0.0",
-      "generator-donejs": "^2.1.0",
+      "generator-donejs": "^3.0.0-pre.0",
       "steal": "^2.0.0",
       "steal-less": "^1.2.2",
       "steal-stache": "^4.1.2"
