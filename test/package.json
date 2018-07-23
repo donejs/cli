@@ -2,7 +2,11 @@
   "name": "donejs",
   "version": "0.0.0",
   "description": "",
-  "dependencies": {},
+  "dependencies": {
+    "day-seconds": "^1.0.2",
+    "donejs-test-plugin": "0.0.5",
+    "foo": "^1.0.0"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "npm run jshint && npm run mocha",
