@@ -74,7 +74,7 @@
       "steal-conditional": "^1.0.0",
       "steal-qunit": "^1.0.1",
       "steal-tools": "^2.0.0",
-      "testee": "^0.7.0"
+      "testee": "^0.8.1"
     }
   }
 }
