@@ -57,6 +57,7 @@
   "donejs": {
     "dependencies": {
       "can": "^5.2.2",
+      "can-stache-route-helpers": "^1.1.1",
       "can-zone": "^0.6.13",
       "done-autorender": "^2.0.0",
       "done-component": "^2.0.0",
