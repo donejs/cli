@@ -57,9 +57,10 @@
   "donejs": {
     "dependencies": {
       "can": "^5.2.2",
+      "can-route-pushstate": "^5.0.6",
       "can-stache-route-helpers": "^1.1.1",
       "can-zone": "^0.6.13",
-      "done-autorender": "^2.0.0",
+      "done-autorender": "^2.4.0",
       "done-component": "^2.0.0",
       "done-css": "^3.0.2",
       "done-serve": "^2.0.0",
@@ -69,6 +70,7 @@
       "steal-stache": "^4.1.2"
     },
     "devDependencies": {
+      "can-route-hash": "^1.0.1",
       "donejs-cli": "^2.0.0",
       "funcunit": "^3.2.0",
       "steal-conditional": "^1.0.0",
