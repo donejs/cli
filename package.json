@@ -70,6 +70,7 @@
       "steal-stache": "^4.1.2"
     },
     "devDependencies": {
+      "can-debug": "^2.0.1",
       "can-route-hash": "^1.0.1",
       "donejs-cli": "^2.0.0",
       "funcunit": "^3.2.0",
