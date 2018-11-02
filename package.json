@@ -73,7 +73,7 @@
       "can-debug": "^2.0.1",
       "can-route-hash": "^1.0.1",
       "donejs-cli": "^2.0.0",
-      "funcunit": "^3.6.0",
+      "funcunit": "^3.6.1",
       "steal-conditional": "^1.0.0",
       "steal-qunit": "^1.0.1",
       "steal-tools": "^2.0.6",
