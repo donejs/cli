@@ -38,7 +38,7 @@
     "concat-stream": "^1.5.1",
     "coveralls-send": "0.0.2",
     "cross-spawn-async": "^2.1.9",
-    "is-ci": "^1.0.7",
+    "is-ci": "^2.0.0",
     "istanbul": "^0.4.2",
     "jshint": "^2.8.0",
     "mocha": "^5.0.2",
