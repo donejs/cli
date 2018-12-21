@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/donejs/cli",
   "devDependencies": {
-    "concat-stream": "^1.5.1",
+    "concat-stream": "^2.0.0",
     "coveralls-send": "0.0.2",
     "cross-spawn-async": "^2.1.9",
     "is-ci": "^1.0.7",
