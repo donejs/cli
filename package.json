@@ -56,7 +56,7 @@
   },
   "donejs": {
     "dependencies": {
-      "can": "^5.16.0",
+      "can": "^5.20.1",
       "can-route-pushstate": "^5.0.7",
       "can-stache-route-helpers": "^1.1.1",
       "can-zone": "^1.0.0",
@@ -66,8 +66,7 @@
       "done-serve": "^3.0.0",
       "generator-donejs": "^3.0.0",
       "steal": "^2.1.6",
-      "steal-less": "^1.2.2",
-      "steal-stache": "^4.1.2"
+      "steal-less": "^1.2.2"
     },
     "devDependencies": {
       "can-debug": "^2.0.1",
