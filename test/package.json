@@ -5,8 +5,7 @@
   "dependencies": {
     "day-seconds": "^1.0.2",
     "donejs-test-plugin": "0.0.5",
-    "foo": "^1.0.0",
-    "generator-donejs": "^3.4.0"
+    "foo": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {
